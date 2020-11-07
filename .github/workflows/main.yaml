@@ -1,0 +1,9 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  my_job:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: "mkdir /tmp/folder && touch /tmp/folder/file && docker run -t -v /tmp/folder:/folder --entrypoint '' ubuntu:18.04 /bin/ls /folder"
